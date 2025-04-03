@@ -1,0 +1,42 @@
+{
+  "extensionName": {
+    "message": "CodeSentry",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Prevents code from being translated during automated translation",
+    "description": "Description of the extension"
+  },
+  "popupTitle": {
+    "message": "CodeSentry",
+    "description": "Title shown in the popup"
+  },
+  "popupSubtitle": {
+    "message": "Protect code during translation",
+    "description": "Subtitle shown in the popup"
+  },
+  "enabled": {
+    "message": "Enabled",
+    "description": "Text shown when the extension is enabled"
+  },
+  "disabled": {
+    "message": "Disabled",
+    "description": "Text shown when the extension is disabled"
+  },
+  "protectedElements": {
+    "message": "Protected elements:",
+    "description": "Label for protected elements count"
+  },
+  "currentDomain": {
+    "message": "Current domain:",
+    "description": "Label for current domain"
+  },
+  "settings": {
+    "message": "Settings",
+    "description": "Text for settings button"
+  },
+  "refreshProtection": {
+    "message": "Refresh Protection",
+    "description": "Text for refresh protection button"
+  }
+}

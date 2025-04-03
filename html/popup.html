@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeSentry</title>
+  <link rel="stylesheet" href="../css/popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CodeSentry</h1>
+      <p class="subtitle">Protect code during translation</p>
+    </header>
+
+    <div class="status-section">
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="enableToggle">
+          <span class="slider round"></span>
+        </label>
+        <span id="statusText">Enabled</span>
+      </div>
+      <div class="stats" id="statsContainer">
+        <div class="stat-item">
+          <span class="stat-label">Protected elements:</span>
+          <span class="stat-value" id="protectedCount">-</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Current domain:</span>
+          <span class="stat-value" id="currentDomain">-</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button id="optionsBtn" class="btn">Settings</button>
+      <button id="refreshBtn" class="btn">Refresh Protection</button>
+    </div>
+  </div>
+  <script src="../js/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeSentry Settings</title>
+  <link rel="stylesheet" href="../css/options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CodeSentry Settings</h1>
+      <p class="subtitle">Configure how code is protected during translation</p>
+    </header>
+
+    <div class="settings-container">
+      <section class="settings-section">
+        <h2>General Settings</h2>
+        
+        <div class="setting-item">
+          <div class="setting-label">
+            <label for="enableExtension">Enable CodeSentry</label>
+            <p class="description">Turn the extension on or off</p>
+          </div>
+          <div class="setting-control">
+            <label class="switch">
+              <input type="checkbox" id="enableExtension">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-label">
+            <label for="enableAdvancedDetection">Advanced Detection <span style="font-size: 0.8em; color: #f57c00;">(Experimental)</span></label>
+            <p class="description">Detect code patterns in regular text</p>
+          </div>
+          <div class="setting-control">
+            <label class="switch">
+              <input type="checkbox" id="enableAdvancedDetection">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="setting-item">
+          <div class="setting-label">
+            <label for="debugMode">Debug Mode</label>
+            <p class="description">Log detailed information to console</p>
+          </div>
+          <div class="setting-control">
+            <label class="switch">
+              <input type="checkbox" id="debugMode">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Protection Methods</h2>
+        <p class="description">Choose which methods to use for protecting code (in order of preference)</p>
+        
+        <div class="setting-item">
+          <div class="protection-methods-container" id="protectionMethodsList">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Elements to Protect</h2>
+        <p class="description">Select which elements should be protected</p>
+        
+        <div id="elementsList" class="element-list">
+          <!-- Will be populated by JavaScript -->
+        </div>
+
+        <div class="setting-item" style="justify-content: flex-end; border-bottom: none;">
+          <button id="addElementBtn" class="btn secondary">
+            <svg style="width: 14px; height: 14px; margin-right: 6px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Add Custom Element
+          </button>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Excluded Domains</h2>
+        <p class="description">List of domains where CodeSentry will not run</p>
+        
+        <div class="setting-item">
+          <div class="excluded-domains-container">
+            <div class="excluded-domains-list" id="excludedDomainsList">
+              <!-- Will be populated by JavaScript -->
+            </div>
+            <div class="domains-input">
+              <input type="text" id="newDomainInput" placeholder="example.com">
+              <button id="addDomainBtn" class="btn secondary">Add</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="actions">
+      <button id="resetBtn" class="btn danger">Reset to Defaults</button>
+      <button id="saveBtn" class="btn primary">Save Changes</button>
+    </div>
+  </div>
+
+  <!-- Templates -->
+  <template id="protectionMethodTemplate">
+    <div class="protection-method-item">
+      <div class="drag-handle">☰</div>
+      <div class="method-info">
+        <span class="method-name"></span>
+        <span class="method-description"></span>
+      </div>
+      <div class="method-toggle">
+        <label class="switch">
+          <input type="checkbox" class="method-checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </template>
+
+  <template id="elementTemplate">
+    <div class="element-item">
+      <div class="element-info">
+        <span class="element-type"></span>
+        <span class="element-selector"></span>
+      </div>
+      <div class="element-actions">
+        <button class="btn icon-btn delete-btn">×</button>
+      </div>
+    </div>
+  </template>
+
+  <template id="domainTemplate">
+    <div class="domain-item">
+      <span class="domain-name"></span>
+      <button class="btn icon-btn delete-btn">×</button>
+    </div>
+  </template>
+
+  <script src="../js/options.js"></script>
+</body>
+</html>
